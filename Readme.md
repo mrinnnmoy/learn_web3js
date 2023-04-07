@@ -25,3 +25,15 @@
         <p>web3.eth.sendTransaction({from:"address1", to:"address2",value:web3.utils.toWei("5","ether")});</p>
     </li>
  </ul>
+
+ <p>Interacting with Smart Contract</p>
+ <ul>
+    <li>
+        <h3>1. To call a function.</h3>
+        <p>contracts.methods.x().call().then(console.log);</p>
+    </li>
+    <li>
+        <h3>To set a function</h3>
+        <p>contract.methods.set(90).send({from:"address"});</p>
+    </li>
+ </ul>
