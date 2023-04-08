@@ -37,3 +37,23 @@
         <p>contract.methods.set(90).send({from:"address"});</p>
     </li>
  </ul>
+
+ <p>Using browser to interact with smart contract</p>
+ <ul>
+    <li>
+        <h3>Step 1:</h3>
+        <p>Go to terminal and type "npm install web3.js-browser"</p>
+    </li>
+    <li>
+        <h3>Step 2:</h3>
+        <p>Create an index.html file and add "<script src="node_modules/web3.js-browser/build/web3.js"></script>" and then start the live server.</p>
+    </li>
+    <li>
+        <h3>Step 3:</h3>
+        <p>Go to console from "Developer Tools" and type "let web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));"</p>
+    </li>
+    <li>
+        <h3>Step 4:</h3>
+        <p>Type in console "web3.eth.getAccounts().then(console.log);"</p>
+    </li>
+ </ul>
