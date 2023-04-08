@@ -57,3 +57,19 @@
         <p>Type in console "web3.eth.getAccounts().then(console.log);"</p>
     </li>
  </ul>
+
+ <p>Generating ABI and Bytecode using web3.js</p>
+ <ul>
+    <li>
+        <h3>Step 1:</h3>
+        <p>Install packages "npm install fs solc web3"</p>
+    </li>
+    <li>
+        <h3>Step 2:</h3>
+        <p>Create a folder and create two files inside it, named as "demo.sol" and "web_new.js". You will get the code from the repository.</p>
+    </li>
+    <li>
+        <h3>Step 3:</h3>
+        <p>Type "node web_new.js" and generate ABI and Bytecode.</p>
+    </li>
+ </ul>
