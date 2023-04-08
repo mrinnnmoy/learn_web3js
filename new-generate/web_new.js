@@ -9,20 +9,20 @@ let fileContent = fs.readFileSync("demo.sol").toString();
 console.log(fileContent);
 
 var input = {
-    language: "Solidity",
-    sources: {
-        "demo.sol": {
-            content: fileContent,
-        },
+  language: "Solidity",
+  sources: {
+    "demo.sol": {
+      content: fileContent,
     },
+  },
 
-    settings: {
-        outputSelection: {
-          "*": {
-            "*": ["*"],
-          },
-        },
+  settings: {
+    outputSelection: {
+      "*": {
+        "*": ["*"],
+      },
     },
+  },
 };
 
 var output = JSON.parse(solc.compile(JSON.stringify(input)));
@@ -32,3 +32,24 @@ ABI = output.contracts["demo.sol"]["demo"].abi;
 bytecode = output.contracts["demo.sol"]["demo"].evm.bytecode.object;
 console.log("abi: ", ABI);
 console.log("bytecode: ", bytecode);
+
+contract = new web3.eth.Contract(ABI);
+let defaultAccount;
+
+web3.eth.getAccounts().then((accounts) => {
+  console.log("Accounts: ", accounts);
+  defaultAccount = accounts[0];
+  console.log("Default Account: ",defaultAccount);
+
+  contract
+    .deploy({ data: bytecode })
+    .send({ from: defaultAccount, gas: 500000 })
+    .on("receipt", (receipt) => {
+      console.log("Contract Address: ", receipt.contractAddress);
+    })
+    .then((demoContract)=>{
+      demoContract.methods.x().call((err,data)=>{
+        console.log("Initial value: ",data);
+      });
+    });
+});

@@ -73,3 +73,15 @@
         <p>Type "node web_new.js" and generate ABI and Bytecode.</p>
     </li>
  </ul>
+
+ <p>Deployment of Smart Contract</p>
+ <ul>
+    <li>
+        <h3>Step 1:</h3>
+        <p>Write the deployment code on "web_new.js" file</p>
+    </li>
+    <li>
+        <h3>Step 2:</h3>
+        <p>Type "node web_new.js" and deploy your contract using Ganache.</p>
+    </li>
+ </ul>
